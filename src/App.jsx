@@ -10,11 +10,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div
-        className={`h-[100vh] ${
-          dark ? "bg-black text-white" : "bg-white text-black"
-        } `}
-      >
+      <div className={`h-[100vh] ${"bg-black text-white"} `}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

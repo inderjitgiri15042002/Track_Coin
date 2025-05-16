@@ -6,15 +6,15 @@ export const CryptoContext = createContext();
 const ThemeCryptoContext = ({ children }) => {
   const [currency, setCurrency] = useState("USD");
   const [symbol, setSymbol] = useState("₹");
-  const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    if (currency === "INR") setCurrency("₹");
-    else if (currency === "$") setSymbol("$");
-  }, []);
+    console.log(currency);
+    if (currency === "INR") setSymbol("₹");
+    else if (currency === "USD") setSymbol("$");
+  }, [currency]);
 
   function handleChange(e) {
-    setValue(e.target.value);
+    setCurrency(e.target.value);
   }
 
   return (
@@ -23,8 +23,6 @@ const ThemeCryptoContext = ({ children }) => {
         currency,
         setCurrency,
         handleChange,
-        dark,
-        setDark,
         symbol,
         setSymbol,
       }}

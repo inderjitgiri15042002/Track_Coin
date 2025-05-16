@@ -15,20 +15,10 @@ import { ThemeProvider } from "@emotion/react";
 import { CryptoContext } from "../CryptoContext";
 
 export default function Header() {
-  const { currency, setCurrency, dark, setDark, symbol, setSymbol } =
+  const { currency, setCurrency, symbol, setSymbol } =
     React.useContext(CryptoContext);
 
   const navigate = useNavigate();
-
-  const lightTheme = createTheme({
-    palette: {
-      mode: "light",
-      primary: { main: "#000" },
-      background: { default: "#fff", paper: "#f0f0f0" },
-      text: { primary: "#000", secondary: "#555" },
-    },
-    typography: { fontFamily: "'Montserrat', sans-serif" },
-  });
 
   const darkTheme = createTheme({
     palette: {
@@ -41,7 +31,7 @@ export default function Header() {
   });
 
   return (
-    <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <AppBar
         position="static"
         sx={{
@@ -91,18 +81,6 @@ export default function Header() {
               <MenuItem value="USD">USD</MenuItem>
               <MenuItem value="INR">INR</MenuItem>
             </Select>
-            <Button
-              onClick={() => setDark(!dark)}
-              variant="outlined"
-              sx={{
-                marginLeft: "4rem",
-                border: `1px solid ${dark ? "white" : "white"}`,
-                transition: "border-color 0.3s ease",
-                color: dark ? "white" : "white",
-              }}
-            >
-              {dark ? "Light Mode" : "Dark Mode"}
-            </Button>
           </Toolbar>
         </Container>
       </AppBar>
