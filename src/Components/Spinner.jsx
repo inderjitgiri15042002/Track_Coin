@@ -6,7 +6,7 @@ const Spinner = () => {
       className="w-full flex justify-center items-center"
       style={{ marginTop: "3rem" }}
     >
-      <span class="loader"></span>
+      <span className="loader"></span>
     </div>
   );
 };
