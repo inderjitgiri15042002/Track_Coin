@@ -50,6 +50,9 @@ const CoinsTable = () => {
         coin.symbol.toLowerCase().includes(search.toLowerCase())
     );
   };
+  useEffect(() => {
+    window.scrollTo({ top: 600, behavior: "smooth" });
+  }, [page]);
 
   return (
     <Container style={{ textAlign: "center" }}>
