@@ -5,6 +5,7 @@ import { auth, db } from "./Firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 import axios from "axios";
 import { CoinList } from "./config/api";
+import axios from "axios";
 
 export const CryptoContext = createContext();
 
