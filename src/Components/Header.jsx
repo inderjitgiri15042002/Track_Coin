@@ -13,9 +13,11 @@ import {
 import { useNavigate } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { CryptoContext } from "../CryptoContext";
+import AuthModel from "../Authentication/AuthModel";
+import UserSidebar from "../Authentication/UserSidebar";
 
 export default function Header() {
-  const { currency, setCurrency, symbol, setSymbol } =
+  const { currency, setCurrency, symbol, setSymbol, user, setUser } =
     React.useContext(CryptoContext);
 
   const navigate = useNavigate();
@@ -81,6 +83,7 @@ export default function Header() {
               <MenuItem value="USD">USD</MenuItem>
               <MenuItem value="INR">INR</MenuItem>
             </Select>
+            {user ? <UserSidebar /> : <AuthModel />}
           </Toolbar>
         </Container>
       </AppBar>
